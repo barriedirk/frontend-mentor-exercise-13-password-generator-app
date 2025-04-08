@@ -1,0 +1,242 @@
+:root {
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  --ff: "JetBrains Mono", monospace;
+
+  --clr-white: hsl(0, 100%, 100%);
+  --clr-black: hsl(0, 0%, 0%);
+
+  --clr-grey-950: hsl(255, 22%, 4%);
+  --clr-grey-900: hsl(248, 17%, 9%);
+  --clr-grey-850: hsl(248, 15%, 11%);
+  --clr-grey-800: hsl(248, 10%, 15%);
+  --clr-grey-700: hsl(248, 5%, 34%);
+  --clr-grey-600: hsl(251, 9%, 53%);
+  --clr-grey-200: hsl(252, 11%, 91%);
+
+  --clr-green-200: hsl(127, 100%, 82%);
+  --clr-yellow-300: hsl(42, 91%, 68%);
+  --clr-orange-400: hsl(13, 95%, 66%);
+  --clr-red-500: hsl(0, 91%, 63%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+main,
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: var(--ff);
+  background: var(--clr-black);
+  color: var(--clr-grey-200);
+  font-size: 1.6rem;
+  font-weight: var(--fw-bold);
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 375px;
+  width: 100%;
+  gap: 16px;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: var(--clr-grey-600);
+}
+
+form {
+  gap: 10px;
+}
+
+.form-group {
+  background: var(--clr-grey-800);
+  color: var(--clr-grey-200);
+  padding: 16px;
+  width: 100%;
+}
+
+input,
+fieldset {
+  border: none;
+}
+
+input[type="text"] {
+  background: var(--clr-grey-800);
+  color: var(--clr-grey-200);
+  font-size: 2.4rem;
+  width: 100%;
+  outline: none;
+}
+
+.password-generator__value {
+  position: relative;
+}
+
+.password-generator__value button {
+  position: absolute;
+  right: 87px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  width: 17px;
+  height: 20px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  color: var(--clr-green-200);
+  font-weight: (var(--fw-bold));
+  font-size: 1.6rem;
+}
+
+.password-generator__slider--values {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password-generator__slider--values span:first-child {
+  font-size: 1.6rem;
+  color: var(--clr-grey-200);
+  font-weight: var(--fw-bold);
+}
+
+.password-generator__slider--values span:last-child {
+  font-size: 2.4rem;
+  color: var(--clr-green-200);
+  font-weight: var(--fw-bold);
+}
+
+.password-generator__generate {
+  width: 100%;
+  color: var(--clr-grey-800);
+  background: var(--clr-green-200);
+  font-size: 1.6rem;
+  padding: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+ul {
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.strength__wrapper {
+  padding: 16px;
+  background: var(--clr-black);
+  margin-bottom: 16px;
+}
+
+.strength__label {
+  font-size: 1.6rem;
+  color: var(--clr-grey-600);
+  text-transform: uppercase;
+}
+
+.strength__text {
+  font-size: 1.6rem;
+  color: var(--clr-grey-200);
+  text-transform: uppercase;
+}
+
+.strength__progress,
+.strength__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.strength__progress {
+  margin-left: auto;
+}
+
+.strength__bar--list {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.strength__bar--list span {
+  width: 10px;
+  height: 28px;
+  border: 1px solid var(--clr-white);
+}
+
+.strength__bar--list span.filled {
+  background: var(--clr-yellow-300);
+  border: transparent;
+}
+
+@media screen and (min-width: 590px) {
+  main {
+    max-width: 540px;
+    gap: 32px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  form {
+    gap: 24px;
+  }
+
+  input[type="text"] {
+    font-size: 3.2rem;
+  }
+
+  .strength__label,
+  .strength__text,
+  .password-generator__slider--values span:first-child,
+  .checkbox-wrapper label {
+    font-size: 1.8rem;
+  }
+
+  .strength__wrapper {
+    margin-bottom: 32px;
+  }
+
+  .form-group.password-generator__value {
+    padding: 16px 32px;
+  }
+
+  .form-group {
+    padding: 24px 32px;
+  }
+
+  .password-generator__value button {
+    font-size: 1.8rem;
+    right: 110px;
+  }
+}
