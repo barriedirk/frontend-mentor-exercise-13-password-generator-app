@@ -30,21 +30,31 @@
   <body>
     <main>
       <h1>Password Generator</h1>
-      <form class="password-generator">
+      <form class="password-generator" role="application">
         <div class="form-group password-generator__value">
-          <input id="paswword-generate" type="text" placeholder="" readonly />
-          <button id="copy-password" type="button">
+          <input
+            id="paswword-generate"
+            type="text"
+            placeholder=""
+            readonly
+            aria-label="Generated password"
+          />
+          <button
+            id="copy-password"
+            type="button"
+            aria-label="Copy password to clipboard"
+          >
             <span id="copy-password--copied" style="visibility: hidden"
               >COPIED</span
             >
-            <img src="./assets/images/icon-copy.svg" alt="icon copy" />
+            <img src="./assets/images/icon-copy.svg" alt="Copy to clipboard" />
           </button>
         </div>
         <div class="form-group">
           <div class="password-generator__slider">
             <div class="password-generator__slider--values">
               <span>Character Length</span>
-              <span id="range-value-text">10</span>
+              <span id="range-value-text" aria-live="polite">10</span>
             </div>
             <input
               type="range"
@@ -53,10 +63,18 @@
               min="1"
               max="22"
               value="10"
+              aria-valuemin="1"
+              aria-valuemax="22"
+              aria-valuenow="10"
+              aria-valuetext="10 characters"
             />
           </div>
           <fieldset>
-            <ul class="password-generator--checkboxes">
+            <ul
+              class="password-generator--checkboxes"
+              role="group"
+              aria-label="Password character options"
+            >
               <li class="checkbox-wrapper">
                 <label>
                   <input type="checkbox" value="includeUppercase" checked />
@@ -84,7 +102,7 @@
             </ul>
           </fieldset>
 
-          <div class="strength__wrapper">
+          <div class="strength__wrapper" role="status" aria-live="polite">
             <span class="strength__label"> Strength</span>
 
             <div class="strength__progress">
@@ -102,12 +120,14 @@
             type="button"
             class="password-generator__generate"
             id="generate-password"
+            aria-label="Generate new password"
           >
             Generate
             <span>
               <img
                 src="./assets//images/icon-arrow-right.svg"
-                alt="icon arrow right"
+                alt=""
+                aria-hidden="true"
               />
             </span>
           </button>
